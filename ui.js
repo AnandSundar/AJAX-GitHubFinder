@@ -28,8 +28,43 @@ class UI {
       </div>
       <h3 class="page-heading mb-3">Latest Repos</h3>
       <div id="repos"></div>
-    
-    
     `;
+  }
+
+  //clear profiel data form homepage
+  clearProfile(user){
+    this.profile.innerHTML = '';
+  }
+
+  //clear alert msg
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+    if(currentAlert){
+      currentAlert.remove();
+    }
+  }
+
+  //show alert msg
+  showAlert(message, className){
+    //clear remaining alert
+    this.clearAlert();
+
+    const div = document.createElement('div');
+    //add classes
+    div.className = className;
+    //add text
+    div.appendChild(document.createTextNode(message));
+    //get parent
+    const container = document.querySelector('.search-Container');
+    //get the search box
+    const search = document.querySelector('.search');
+    //insert alert
+    container.insertBefore(div, search);
+
+    //timeout after 3 sec
+    setTimeout(() => {
+      this.clearAlert();
+    },3000);
+
   }
 }
