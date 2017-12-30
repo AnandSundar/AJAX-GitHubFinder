@@ -6,4 +6,5 @@
 <ul>
   <li>Vanilla Js (ES6)</li>
   <li>AJAX</li>
+  <li>Json</li>
 </ul>
